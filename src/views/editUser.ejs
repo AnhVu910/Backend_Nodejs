@@ -21,43 +21,30 @@
 <body>
     <div class="container">
         <div class="row">
-            <form action="/post-crud" method="POST">
+            <form action="/put-user" method="post">
                 <div class="form-row">
                     <div class="col-12 mt-3">
-                        <h1>Tạo User</h1>
+                        <h1>Sửa thông tin khách hàng</h1>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" name="email" placeholder="Email">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Password">
-                    </div>
+                  
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Name</label>
-                  <input type="text" class="form-control" name="name" placeholder="name">
+                  <input type="text" class="form-control" name="name" placeholder="name" value="<%=user.name%>">
                 </div>
                 <div class="form-group">
                   <label for="inputAddress2">Address</label>
-                  <input type="text" class="form-control" name="address" placeholder="Address">
+                  <input type="text" class="form-control" name="address" placeholder="Address" value="<%=user.address%>">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputCity">Phone number</label>
-                    <input type="text" class="form-control" name="phone">
+                    <input type="text" class="form-control" name="phone" value="<%=user.phone%>">
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputState">Role</label>
-                    <select name="roleid" class="form-control">
-                      <option value="admin">Admin</option>
-                      <option value="staff">Staff</option>
-                      <option value="guest">Guest</option>
-                    </select>
-                  </div>
+                  
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <input name="id" value="<%=user.id%>" type="hidden"/>
+                <button type="submit" class="btn btn-primary">Update</button>
               </form>
         </div>
     </div>

@@ -33,14 +33,48 @@ let dispalyCRUD = async(req, res) => {
     try {  
         let userData = await CRUDservice.getAllUsers();
         console.log(userData);
-       return res.send('dispalyCRUD');
+        return res.render('displayuser.ejs',{
+            dataTable: userData
+        })
     } catch (error) {
         console.log(error);
     }
+}
+
+let editCRUD= async(req, res) => {
+    let userID = req.query.id;
+    if(userID) {
+        let dataUser= await CRUDservice.getInfoUserById(userID);
+        console.log(dataUser);
+
+        return res.render('editUser.ejs',{
+            user: dataUser
+        });
+
+
+    }else{
+        return res.send('Không tồn tại khách hàng này');
+    }
+    console.log(req.query.id);
+}
+let putCRUD= async(req, res) => {
+    let data =  req.body;
+    let allUser= await CRUDservice.updateUser(data);
+    return res.render('displayuser.ejs',{
+        dataTable: allUser
+    })
+}
+let deleteCRUD = async(req, res) => {
+    let id = req.query.id;
+    await CRUDservice.deleteUser(id);
+    return res.send('successfully')
 }
 module.exports = {
     getHomePage: getHomePage,
     getCRUD: getCRUD,
     postCRUD: postCRUD,
     dispalyCRUD: dispalyCRUD,
+    editCRUD: editCRUD,
+    putCRUD: putCRUD,
+    deleteCRUD: deleteCRUD,
 }

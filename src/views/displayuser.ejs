@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get CRUD</title>
+</head>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    a{
+        text-decoration-line: none;
+        border: none;
+        padding: 5px 5px;
+        border-radius: 3px;
+        cursor: pointer;
+        color: black;
+    }
+    .edit{
+        background-color: rgb(224, 218, 109);
+        
+    }
+    .delete{
+        background-color: rgb(226, 72, 21);
+        margin-left: 10px;
+
+    }
+</style>
+<body>
+    <h1>Thông tin khách hàng</h1>
+
+    <table>
+        <tr>
+          <th>STT</th>
+          <th>Họ tên</th>
+          <th>Email</th>
+          <th>Địa chỉ</th>
+          <th>Số điện thoại</th>
+          <th>Role</th> 
+          <th>Hành động</th> 
+
+        </tr>
+
+        
+            <% for(let i=0; i < dataTable.length; i++) { %>
+               <tr>
+                 <td><%= dataTable[i].id %></td>
+                 <td><%= dataTable[i].name %></td>
+                 <td><%= dataTable[i].email %></td>
+                 <td><%= dataTable[i].address %></td>
+                 <td><%= dataTable[i].phone %></td>
+                 <td><%= dataTable[i].roleid %></td>
+                 <td> 
+                    <a href="/edit-user?id=<%= dataTable[i].id %>" type="button" class="edit">
+                        Sửa
+                    </a>
+                    <a href="/delete-user?id=<%= dataTable[i].id %>" type="button" class="delete">
+                        Xóa
+                    </a>
+                 </td>
+               </tr>
+            <% } %>
+            
+            
+      </table>
+      
+</body>
+</html>
