@@ -21,8 +21,19 @@ let getCRUD = async(req, res) => {
 }
 let postCRUD = async(req, res) => {
     try {  
-      await CRUDservice.createNewUser(req.body);
+        let message = await CRUDservice.createNewUser(req.body);
+        console.log(message);
        return res.send('postCRUD');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+let dispalyCRUD = async(req, res) => {
+    try {  
+        let userData = await CRUDservice.getAllUsers();
+        console.log(userData);
+       return res.send('dispalyCRUD');
     } catch (error) {
         console.log(error);
     }
@@ -31,4 +42,5 @@ module.exports = {
     getHomePage: getHomePage,
     getCRUD: getCRUD,
     postCRUD: postCRUD,
+    dispalyCRUD: dispalyCRUD,
 }
