@@ -2,6 +2,7 @@ import db from "../models";
 import bcrypt from "bcryptjs";
 
 let handleUserLogin = (email, password) => {
+  console.log(email, password);
   return new Promise(async (resolve, reject) => {
     try {
       let userData = {};
@@ -25,7 +26,6 @@ let handleUserLogin = (email, password) => {
           userData.message = "Account not found";
         }
       } else {
-        //return error
         userData.errCode = 1;
         userData.message = "Account does not exist";
       }

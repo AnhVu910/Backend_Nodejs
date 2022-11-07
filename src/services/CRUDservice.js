@@ -22,7 +22,7 @@ let createNewUser = async (data) => {
     }
   });
 };
-let hashpassword = (password) => {
+let hashpassword = async (password) => {
   return new Promise(async (resolve, reject) => {
     try {
       var hash = await bcrypt.hashSync(password, salt);
