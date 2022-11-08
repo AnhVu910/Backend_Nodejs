@@ -19,7 +19,7 @@ let handleLogin = async (req, res) => {
 };
 
 let GetListUsers = async (req, res) => {
-  let id = req.body.id; // all or id
+  let id = req.query.id; // all or id
   if (!id) {
     return res.status(200).json({
       errCode: 1,
