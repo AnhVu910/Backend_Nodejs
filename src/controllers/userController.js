@@ -28,6 +28,11 @@ let GetListUsers = async (req, res) => {
     });
   }
   let listUsers = await userService.getListUser(id);
+  return res.status(200).json({
+    errCode: 0,
+    errorMessage: "OK",
+    listUsers,
+  });
 };
 
 module.exports = {

@@ -73,7 +73,9 @@ let getListUser = (userId) => {
         });
       }
       resolve(users);
-    } catch (error) {}
+    } catch (error) {
+      reject(error);
+    }
   });
 };
 
