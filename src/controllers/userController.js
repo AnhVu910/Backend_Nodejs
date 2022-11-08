@@ -18,8 +18,21 @@ let handleLogin = async (req, res) => {
   });
 };
 
+let GetListUsers = async (req, res) => {
+  let id = req.body.id; // all or id
+  if (!id) {
+    return res.status(200).json({
+      errCode: 1,
+      errorMessage: "Empty id",
+      listUsers: [],
+    });
+  }
+  let listUsers = await userService.getListUser(id);
+};
+
 module.exports = {
   handleLogin: handleLogin,
+  GetListUsers: GetListUsers,
 };
 
 // check in client
