@@ -26,3 +26,6 @@
 > Sau khi khởi chạy 3 thành phần trên thành công thì truy cập vào frontend http://127.0.0.1:3000/ 
 
 
+## Demo
+
+[Demo các trường hợp đối với web cho phép đăng ký, đăng nhập thông tin người dùng](https://drive.google.com/drive/folders/1w5qdRyB8yJ_xgZ4zA7uZe14Vish__j4u?usp=share_link)
