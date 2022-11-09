@@ -38,4 +38,4 @@
 
 ## Demo
 
-[Demo các trường hợp đối với web cho phép đăng ký, đăng nhập thông tin khách hàng](https://drive.google.com/drive/folders/1w5qdRyB8yJ_xgZ4zA7uZe14Vish__j4u?usp=share_link)
+[Demo các trường hợp đối với web cho phép đăng nhập thông tin khách hàng](https://drive.google.com/drive/folders/1w5qdRyB8yJ_xgZ4zA7uZe14Vish__j4u?usp=share_link)
